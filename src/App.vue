@@ -1,19 +1,98 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-for="(rank, i) in list" :key="i" class="row">
+      <div class="col-3">
+        <p>{{ rank.name }}</p>
+      </div>
+      <div class="col-2">
+        <button @click="updateRank(rank)">Update</button>
+      </div>
+      <div class="col-2">
+        <button @click="deleteRank(rank.id)">Delete</button>
+      </div>
+    </div>
+    <button @click="createRank()">Save</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  data() {
+    return {
+      list: []
+    };
+  },
+  methods: {
+    updateRank(item) {
+      item.name = item.name + "dulal";
+      const requestOptions = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
+          "X-AUTH-TOKEN":
+            "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+          "X-DEVICE-ID": "aa="
+        },
+        body: JSON.stringify(item)
+      };
+      fetch("http://198.23.221.55:46668/api/ranks", requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data));
+    },
+    createRank() {
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
+          "X-AUTH-TOKEN":
+            "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+          "X-DEVICE-ID": "aa="
+        },
+        body: JSON.stringify({ name: "ABC", type: "STUFF" })
+      };
+      fetch("http://198.23.221.55:46668/api/ranks", requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data));
+    },
+    deleteRank(id) {
+      const requestOptions = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
+          "X-AUTH-TOKEN":
+            "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+          "X-DEVICE-ID": "aa="
+        }
+      };
+      fetch(
+        "http://198.23.221.55:46668/api/ranks?type=STUFF&id=" + id,
+        requestOptions
+      )
+        .then(response => response.json())
+        .then(data => console.log(data));
+    }
+  },
+  mounted() {
+    const headers = {
+      "Content-Type": "application/json",
+      "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
+      "X-AUTH-TOKEN":
+        "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+      "X-DEVICE-ID": "aa="
+    };
+    fetch("http://198.23.221.55:46668/api/ranks?type=STUFF&size=120", {
+      headers
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.list = data.list;
+      });
   }
-}
+};
 </script>
 
 <style>
