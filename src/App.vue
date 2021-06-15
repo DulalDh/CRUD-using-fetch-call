@@ -30,9 +30,8 @@ export default {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
-          "X-AUTH-TOKEN":
-            "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+          "X-API-KEY": "fgbhdfdhhsbsbsdbsdgsdfbdfbsdbdbd",
+          "X-AUTH-TOKEN": "fdgdgdfdfbngnsbhsdbsbhdeky,dhsewhnddddejndfnh",
           "X-DEVICE-ID": "aa="
         },
         body: JSON.stringify(item)
@@ -46,9 +45,8 @@ export default {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
-          "X-AUTH-TOKEN":
-            "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+          "X-API-KEY": "fgbhdfdhhsbsbsdbsdgsdfbdfbsdbdbd",
+          "X-AUTH-TOKEN": "fdgdgdfdfbngnsbhsdbsbhdeky,dhsewhnddddejndfnh",
           "X-DEVICE-ID": "aa="
         },
         body: JSON.stringify({ name: "ABC", type: "STUFF" })
@@ -62,9 +60,8 @@ export default {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
-          "X-AUTH-TOKEN":
-            "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+          "X-API-KEY": "fgbhdfdhhsbsbsdbsdgsdfbdfbsdbdbd",
+          "X-AUTH-TOKEN": "fdgdgdfdfbngnsbhsdbsbhdeky,dhsewhnddddejndfnh",
           "X-DEVICE-ID": "aa="
         }
       };
@@ -79,9 +76,8 @@ export default {
   mounted() {
     const headers = {
       "Content-Type": "application/json",
-      "X-API-KEY": "mZWNNnOVz0QT5RxzeKVVJjU4vKOg4p4XNIAKgZmdkjRo",
-      "X-AUTH-TOKEN":
-        "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTAxOTQyNDYsInN1YiI6IjB3ampaWHBSYTdydVJZV0t5blFQM0M4SndXZ3owcXFPVEVkMjNKTE54eU4jYWE9IiwiaXNzIjoiaW1wb3N0ZXJjb3JwIn0.sAqS1x4IZf1xybkZ6EuEWZC2aDVw9BoyaI8gPPPP2BY",
+      "X-API-KEY": "fgbhdfdhhsbsbsdbsdgsdfbdfbsdbdbd",
+      "X-AUTH-TOKEN": "fdgdgdfdfbngnsbhsdbsbhdeky,dhsewhnddddejndfnh",
       "X-DEVICE-ID": "aa="
     };
     fetch("http://198.23.221.55:46668/api/ranks?type=STUFF&size=120", {
